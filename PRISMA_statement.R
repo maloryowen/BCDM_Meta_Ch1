@@ -10,7 +10,7 @@ PRISMA <- prisma(found=348,
        screened=295,
        screen_exclusions=202,
        full_text=93,
-       full_text_exclusions=0,
+       full_text_exclusions=55,
        qualitative=0,
        quantitative=0)
 print(PRISMA)
