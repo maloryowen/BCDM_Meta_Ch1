@@ -1,0 +1,61 @@
+---
+title: "Fruit/Seed Allocation Meta"
+output: html_document
+---
+
+####Beginning with a systematic review of cactus fruiting allocation papers, we can see the process by which papers were excluded from the project using a PRISMA chart. 
+```{r Library, include=FALSE}
+library(PRISMAstatement)
+library(ggplot2)
+```
+
+
+```{r PRISMA, warning=FALSE}
+#PRISMA Chart
+
+PRISMA <- prisma(found=348,
+       found_other=0,
+       no_dupes=295,
+       screened=295,
+       screen_exclusions=202,
+       full_text=93,
+       full_text_exclusions=92,
+       qualitative=92,
+       quantitative=1)
+
+PRISMA
+
+
+```
+
+####The exclusion process focused first on screening for dupes, then screening titles, then screening abstracts. After this, full texts where skimmed to identify any papers from which data could be extracted.
+
+####For exclusion, different categories of reasons for exclusion were established, with a hierarchial system. 
+
+###Not engish > Not cacti > Not fruit > Not allocation >
+
+####However, it appears that only 1 paper had any data that could possible be analyzed for the research question. Most full text papers reported seed and fruit metrics of interested, however, they did not compare between these values. Instead, values were statisically analyzed across a third variable. 
+
+####Another major cause for exclusion was that for the few that did report seed and fruit metrics as correlated, they did not report a confidence interval or R squared, but instead just reported raw data. 
+
+```{r Studies Analysis, warning = FALSE}
+studies <- read.csv("~/Masters/BCDM_Meta_Ch1/studies.csv")
+
+#How many were excluded?
+ggplot(studies, aes(x=exclude)) +
+  geom_histogram(stat="count") +
+  theme_minimal()
+
+#At what stage were most excluded?
+ggplot(studies, aes(x=category)) +
+  geom_histogram(stat="count") +
+  theme_minimal()
+
+#For what reason was a paper excluded?
+ggplot(studies, aes(x=detailed.reason)) +
+  geom_histogram(stat="count") +
+  theme(axis.text.x = element_text(angle=60, hjust=1))
+
+```
+
+####So we can see, this project is not really a viable option. 
