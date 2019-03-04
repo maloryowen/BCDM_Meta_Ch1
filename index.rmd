@@ -3,12 +3,26 @@ title: "Fruit/Seed Allocation Meta"
 output: html_document
 ---
 
-####Beginning with a systematic review of cactus fruiting allocation papers, we can see the process by which papers were excluded from the project using a PRISMA chart. 
+####Beginning with a systematic review of cactus fruiting allocation papers, we can see which search terms secured the most hits. AFter collecting all of our papers of interest, we can see the process by which papers were excluded from the project using a PRISMA chart. 
 ```{r Library, include=FALSE}
 library(PRISMAstatement)
 library(ggplot2)
+library(knitr)
 ```
 
+
+```{r Search Terms and Hits, warning = FALSE}
+#Search Term Data
+search.term <- read.csv("~/Masters/BCDM_Meta_Ch1/search.terms.csv")
+kable(search.term) #table view
+
+#Histogram view
+ggplot(search.term, aes(x=terms, y=hits)) +
+  geom_bar(stat="identity") +
+  theme(axis.text.x = element_text(angle=60, hjust=1)) +
+  geom_text(aes(label=hits), position=position_dodge(width=0.9), vjust=-0.25)
+
+```
 
 ```{r PRISMA, warning=FALSE}
 #PRISMA Chart
@@ -27,6 +41,9 @@ PRISMA
 
 
 ```
+
+
+
 
 ####The exclusion process focused first on screening for dupes, then screening titles, then screening abstracts. After this, full texts where skimmed to identify any papers from which data could be extracted.
 
@@ -58,4 +75,4 @@ ggplot(studies, aes(x=detailed.reason)) +
 
 ```
 
-####So we can see, this project is not really a viable option. 
+####So we can see, this project is not really a viable option for a full blown meta-analysis. However, perhaps a paper addressing this research gap would be valuable and pertinent. 
