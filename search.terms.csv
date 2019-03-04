@@ -1,0 +1,11 @@
+search,terms,hits,refines
+1,cact* and allocat*,25,"topic, last five years"
+2,cact* and fruit* and size,63,"topic, last five years"
+3,cact* and seed and fruit*,110,"topic, last five years, articles"
+4,cact* and seed and size,53,"topic, last five years"
+5,fruit* and seed and size and allocat* ,69,"topic, last five years"
+6,cact* and size and allocat*,10,"topic, last five years"
+7,cact* and fruit and agricultur*,18,"topic, last five years"
+,,,
+,total,348,
+,total without dupes,295,

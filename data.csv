@@ -1,0 +1,2 @@
+ID,rep,lat,long,continent,country,ecosystem,hypothesis,simplified.hypothesis,species,outcome,factor,treatment,control,unit,Nsites,n.treatment,n.control,ntotalsamples,mean.treatment,mean.control,variance.treatment,variance.control,r-value,variance.measurement
+166,166.1,35202700,33550900,Europe,Cyprus,Agriculture,There are differences between Ntopia and Hercules variants of cacti,Descriptive,Opuntia ficus-indica ,,plant variant,Hercules,Ntopia,Percent seed weight to fruit biomass,1,,,,5.1,7.7,,,0.73,
